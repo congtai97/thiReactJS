@@ -1,0 +1,18 @@
+.add-new-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+        width: 300px;
+        margin-top:10px
+    }
+    button{
+        width: 300px;
+        margin-top: 10px;
+    }
+
+    h1{
+        text-align: center;
+    }
+}
