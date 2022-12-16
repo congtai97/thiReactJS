@@ -1,7 +1,7 @@
-import { createSelector } from '@reduxjs/toolkit'
+// import { createSelector } from '@reduxjs/toolkit'
 
-export const todoListNote = (state) => state.data;
+// export const todoListNote = (state) => state.datas;
 
-export const todoNoteSelector = createSelector((data) => {
-    return data;
-})
+// export const todoNoteSelector = createSelector((data) => {
+//     return data;
+// })

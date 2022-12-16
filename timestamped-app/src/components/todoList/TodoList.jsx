@@ -1,18 +1,24 @@
 import { useSelector } from "react-redux";
-import { todoNoteSelector } from "../../redux/selector/selectors";
+import { Route, Routes } from "react-router";
+import NoteDetail from "../note-detail/NoteDetail";
 import TodoItem from "../todo-item/TodoItem";
 
 function TodoList() {
   // const data = useSelector(todoNoteSelector)
   const todoList = useSelector((state) => state.todoReducer.data);
-  console.log(todoList);
+  console.log("note List :", todoList);
 
   return (
-    <div>
-      {todoList.map((item) => {
-        <TodoItem title={item.title} detail={item.detail} />;
-      })}
-    </div>
+    <>
+      {todoList.map((note) => (
+        <div key={note.id}>
+          <TodoItem note={note} />
+        </div>
+      ))}
+      <Routes>
+        <Route path="/note-details/:id" element={<NoteDetail />} />
+      </Routes>
+    </>
   );
 }
 
