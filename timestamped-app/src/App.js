@@ -5,13 +5,17 @@ import TodoList from './components/todoList/TodoList';
 import TodoItem from './components/todo-item/TodoItem';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NoteDetail from './components/note-detail/NoteDetail';
+import Header from './components/header/Header';
 
 function App() {
   return (
     <div className="App">
-        <AddNewForm/>
-        <TodoList/>
-        
+        <Header/>
+        <Routes>
+          <Route path='/add-new-note' element={<AddNewForm/>}/>
+          <Route path='/all-note' element={<TodoList/>}/>
+          <Route path="/note-details/:id" element={<NoteDetail />} />
+        </Routes>
     </div>
   );
 }
